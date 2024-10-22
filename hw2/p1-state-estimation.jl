@@ -55,7 +55,8 @@ z = [Vᵐ₁, Pᵐ₁₂, Pᵐ₂₁, Qᵐ₂₁]
 # array of x's
 arr_x = [[0.0, 1.0]]
 
-for i in 1:2
+iterations = 30
+for i in 1:iterations
     x = arr_x[i]
     δ₂ = x[1]
     v₁ = x[2]
@@ -72,6 +73,6 @@ for i in 1:2
 end
 
 # display results
-df = DataFrame(Iteration=["flat start", 1, 2], δ₂=[xx[1] for xx ∈ arr_x], v₁=[xx[2] for xx ∈ arr_x])
+df = DataFrame(Iteration=["flat start", 1:iterations...], δ₂=[xx[1] for xx ∈ arr_x], v₁=[xx[2] for xx ∈ arr_x])
 header = (["iteration", "δ₂", "v₁"], ["", "radians", "pu"])
 pretty_table(df, header=header, header_crayon=crayon"yellow bold")
