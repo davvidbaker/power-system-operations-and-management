@@ -39,7 +39,7 @@ end
 println("Model is")
 println(model)
 
-plt = plot(years, pred_demands, label="predicted")
+plt = plot(years[5:end], pred_demands[5:end], label="predicted", linewidth=3, opacity=0.5)
 plot!(years, demands, label="actual", ylabel="peak load [GW]", xlabel="year")
 display(plt)
 
